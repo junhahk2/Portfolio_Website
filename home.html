@@ -1,0 +1,342 @@
+<!doctype html />
+<html lang="en-US">
+
+<head>
+	<meta charset="utf-8">
+	<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+	<style type="text/css">
+		body {
+			background-image: url("Home1.png");
+			font-family: 'Outfit', sans-serif;
+			background-size: contain;
+			background-position: top center;
+			background-repeat: no-repeat;
+			background-attachment: scroll;
+			background-color: #CCDBE9;
+			margin: 0;
+			height: auto;
+			min-height: 100%;
+			color: white;
+		}
+
+		.navdiv {
+			margin: px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.logo {
+			font-size: 24px;
+			font-weight: bold;
+			color: white;
+			margin: 20px;
+		}
+
+		.navdiv ul {
+			list-style: none;
+			font-family: Outfit, sans-serif;
+			display: flex;
+			flex-direction: row;
+		}
+
+		.navdiv li {
+			margin: 20px;
+		}
+
+		.navdiv a {
+			text-decoration: none;
+			color: rgb(127, 127, 127);
+			font-size: 20px;
+			font-weight: bold;
+		}
+
+		nav a:hover {
+			color: #c39bd3;
+		}
+
+		.social {
+			display: flex;
+			align-items: flex;
+			flex-direction: row;
+			justify-content: flex-end;
+		}
+
+		.social img {
+			margin: 5px;
+		}
+
+		header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 5px 0px;
+			position: fixed;
+			top: 0;
+			width: 100%;
+			z-index: 1000;
+			background-color: transparent;
+		}
+
+		nav ul {
+			list-style: none;
+			display: flex;
+			gap: 15px;
+			margin: 0;
+			padding: 20px;
+		}
+
+		nav a {
+			text-decoration: none;
+			color: white;
+			font-size: 18px;
+			font-weight: bold;
+		}
+
+		nav a:hover {
+			color: #ccc;
+		}
+
+		.content {
+			padding-top: 60px;
+			/* avoids overlap with fixed header */
+			text-align: left;
+			margin-left: 60px;
+		}
+
+		.morecontent {
+			padding-top: 0;
+			text-align: left;
+			margin-left: 60px;
+		}
+
+		.section-img {
+			width: 300px;
+			height: auto;
+			border-radius: 12px;
+			box-shadow: 0 8px 20px rgba(225, 225, 225, 0.15);
+		}
+
+		.section-text {
+			max-width: 500px;
+			color: #111;
+		}
+
+		.section-text h2 {
+			font-size: 28px;
+			margin-bottom: 10px;
+		}
+
+		.section-text .subtitle {
+			font-size: 16px;
+			color: #444;
+			margin-bottom: 20px;
+		}
+
+		.section-text p {
+			font-size: 16px;
+			line-height: 1.5;
+		}
+
+		.project-section {
+			margin: 50vh 12px 0px;
+			background: linear-gradient(to right, #929CB8, #485477);
+			border-radius: 20px;
+			padding: 40px;
+			max-width: ;
+			display: flex;
+			align-items: center;
+			gap: 40px;
+			box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+			color: #ffffff;
+		}
+
+		.project-img {
+			width: 42%;
+			height: auto;
+			border-radius: 12px;
+			box-shadow: ;
+		}
+
+		.project-info h2 {
+			font-size: 28px;
+			margin-bottom: 10px;
+		}
+
+		.project-info .subtitle {
+			font-size: 16px;
+			color: #ffffff;
+			margin-bottom: 20px;
+		}
+
+		.project-info p {
+			font-size: 16px;
+			line-height: 1.5;
+		}
+
+		.tags {
+			margin-top: 15px;
+		}
+
+		.tags span {
+			background: white;
+			padding: 4px 8px;
+			border-radius: 12px;
+			font-size: 12px;
+			margin-right: 10px;
+			display: inline-block;
+			color: #333;
+		}
+
+		/* Habitat | Habit Tracker App box */
+		.habitat-section {
+			margin: 12px;
+			background: linear-gradient(to right, #A2C0C4, #6F8E92);
+			border-radius: 20px;
+			padding: 40px;
+			max-width: ;
+			display: flex;
+			align-items: center;
+			gap: 40px;
+			box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+			color: #ffffff;
+		}
+
+		.habitat-img {
+			width: 42%;
+			height: auto;
+			border-radius: 12px;
+			box-shadow: ;
+		}
+
+		.habitat-info {
+			max-width: 500px;
+		}
+
+		.habitat-info h2 {
+			font-size: 28px;
+			margin-bottom: 10px;
+		}
+
+		.habitat-info .subtitle {
+			font-size: 16px;
+			color: #f0f0f0;
+			margin-bottom: 20px;
+		}
+
+		.habitat-info p {
+			font-size: 16px;
+			line-height: 1.5;
+			color: #fdfdfd;
+			margin-bottom: 20px;
+		}
+
+		.habitat-info .tags {
+			display: flex;
+			gap: 10px;
+			flex-wrap: wrap;
+		}
+
+		.habitat-info .tags span {
+			background-color: #ffffff;
+			color: #333;
+			padding: 6px 12px;
+			border-radius: 999px;
+			font-size: 14px;
+			font-weight: 600;
+		}
+
+		@media (min-width: 4000px) {
+			.project-section {
+				margin-top: 800vh;
+			}
+		}
+
+		@media (max-width: 2000px) {
+			.project-section {
+				margin-top: 200vh;
+			}
+		}
+
+		@media (max-width: 1600px) {
+			.project-section {
+				margin-top: 140vh;
+			}
+		}
+
+		@media (mnx-width: 1400px) {
+			.project-section {
+				margin-top: 800vh;
+			}
+		}
+
+		@media (max-width: 1200px) {
+			.project-section {
+				margin-top: 60vh;
+			}
+		}
+
+		@media (max-width: 800px) {
+			.project-section {
+				margin-top: 50vh;
+			}
+		}
+
+		@media (max-width: 600px) {
+			.project-section {
+				margin-top: 20vh;
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+	<header>
+		<div class="logo">JunHa Kim</div>
+		<nav>
+			<ul>
+				<li><a href="home.html">Work</a></li>
+				<li><a href="Art.html">Art</a></li>
+				<li><a href="About.html">About</a></li>
+				<li><a href="resume.pdf">Resume</a></li>
+			</ul>
+		</nav>
+	</header>
+	<div class="content">
+		<h1>Hello!</h1>
+		<p>I’m Jun-Ha, a UX/Product Designer based in Chicago, Illinois.</p>
+	</div>
+	<div class="morecontent">
+		<p>I am a designer dedicated to empowering others by crafting purposeful and creative digital experiences.</p>
+	</div>
+	<div class="project-section">
+		<img src="illiniinvolvescreens.png" alt="Illini Involve App Screens" class="project-img">
+		<div class="project-info">
+			<h2><a href="illini-involve.html" style="color: white; text-decoration: none;">Illini Involve</a></h2>
+			<p class="subtitle">Ascend Pitch Comp | Fall 2024</p>
+			<p>Helps students get involved with student organizations that match their interests, goals, and
+				preferences.</p>
+			<div class="tags">
+				<span>User Research</span>
+				<span>Product Design</span>
+				<span>Prototyping</span>
+			</div>
+		</div>
+	</div>
+	<div class="habitat-section">
+		<img src="habitatscreens.png" alt="Habitat App Screens" class="habitat-img" />
+		<div class="habitat-info">
+			<h2>Habitat | Habit Tracker App</h2>
+			<p class="subtitle">UX Case Study | Fall 2025</p>
+			<p>Track daily habits and stay motivated to build consistent progress, one step at a time.</p>
+			<div class="tags">
+				<span>User Research</span>
+				<span>Product Design</span>
+				<span>Prototyping</span>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

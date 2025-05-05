@@ -1,0 +1,14 @@
+body{
+    margin: 0;
+}
+div p{
+    background-color: aqua;
+    padding: 1rem;
+    font-size: 40px;
+    border: 10px solid rgb(160, 153, 201);
+    margin: 0;
+}
+div{
+    background-color:blanchedalmond;
+    padding: 10px;
+}

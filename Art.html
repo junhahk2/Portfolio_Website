@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #CCDBE9;
+      font-family: 'Outfit', sans-serif;
+      margin: 0;
+      color: white;
+      min-height: 100vh;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px 0px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background-color: transparent;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+      margin: 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      margin: 0;
+      padding: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #ccc;
+    }
+
+    /* Gallery */
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 120px; /* offset for fixed header */
+      padding: 20px;
+    }
+
+    .container img {
+      width: 300px;
+      height: auto;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      object-fit: cover;
+    }
+
+    /* Popup */
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 2000;
+    }
+
+    .popup img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+    }
+
+    .popup span {
+      position: absolute;
+      top: 40px;
+      right: 40px;
+      font-size: 40px;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">JunHa Kim</div>
+    <nav>
+      <ul>
+		<li><a href="home.html">Work</a></li>
+		<li><a href="Art.html">Art</a></li>
+		<li><a href="About.html">About</a></li>
+		<li><a href="resume.pdf">Resume</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <img src="image1.jpg" alt="Gallery Image 1" />
+    <img src="image2.jpg" alt="Gallery Image 2" />
+    <img src="image3.jpg" alt="Gallery Image 3" />
+    <img src="image4.jpg" alt="Gallery Image 4" />
+    <img src="image5.jpg" alt="Gallery Image 5" />
+
+    <!-- Popup Structure -->
+    <div class="popup">
+      <span>&times;</span>
+      <img src="" alt="Enlarged Image">
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.container > img').forEach(image => {
+      image.onclick = () => {
+        const popup = document.querySelector('.popup');
+        popup.style.display = 'flex';
+        popup.querySelector('img').src = image.src;
+      };
+    });
+
+    document.querySelector('.popup span').onclick = () => {
+      document.querySelector('.popup').style.display = 'none';
+    };
+  </script>
+
+</body>
+
+</html>
